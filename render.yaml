@@ -1,0 +1,30 @@
+# Render.com Blueprint Configuration
+# This file configures automatic deployment to Render.com
+
+services:
+  - type: web
+    name: media-toolkit
+    env: python
+    runtime: python-3.11
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    buildCommand: bash build.sh
+    startCommand: python run.py
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 8000
+      - key: ENVIRONMENT
+        value: production
+      - key: MAX_UPLOAD_SIZE_MB
+        value: 500
+      - key: TEMP_FILE_RETENTION_HOURS
+        value: 1
+    disk:
+      name: media-toolkit-storage
+      mountPath: /opt/render/project/src/uploads
+      sizeGB: 1

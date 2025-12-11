@@ -1,0 +1,44 @@
+# robots.txt for Media Toolkit
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Disallow crawling of API endpoints
+Disallow: /api/
+
+# Disallow crawling of temporary file directories
+Disallow: /uploads/
+Disallow: /outputs/
+
+# Disallow crawling of admin areas (if added later)
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://yourdomain.com/static/sitemap.xml
+
+# Crawl-delay for polite crawlers (optional)
+# Crawl-delay: 1
+
+# Specific rules for major search engines
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /uploads/
+Disallow: /outputs/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /uploads/
+Disallow: /outputs/
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+Disallow: /api/
+Disallow: /uploads/
+Disallow: /outputs/

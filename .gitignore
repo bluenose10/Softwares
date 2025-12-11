@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Environment variables (IMPORTANT: Contains API keys!)
+.env
+
+# Temporary files
+uploads/
+outputs/
+*.tmp
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.sqlite3
+usage_tracker.json
+
+# FFmpeg (large binaries)
+ffmpeg.exe
+ffprobe.exe
+ffplay.exe

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Pro! - Media Toolkit</title>
+    <link rel="stylesheet" href="/static/css/landing.css">
+    <style>
+        .success-container {
+            max-width: 600px;
+            margin: 5rem auto;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: bounceIn 0.6s ease;
+        }
+
+        .success-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .success-message {
+            font-size: 1.125rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .success-features {
+            background: #f8fafc;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .success-features h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        .success-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .success-features li {
+            padding: 0.75rem 0;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .success-features li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">🎬</span>
+                <span class="logo-text">Media Toolkit</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Success Message -->
+    <div class="success-container">
+        <div class="success-icon">🎉</div>
+        <h1 class="success-title">Welcome to Pro!</h1>
+        <p class="success-message">
+            Your payment was successful. You now have unlimited access to all features!
+        </p>
+
+        <div class="success-features">
+            <h3>Your Pro Benefits:</h3>
+            <ul>
+                <li>Unlimited conversions per day</li>
+                <li>500MB max file size (20x larger)</li>
+                <li>Priority processing queue</li>
+                <li>All 6 tools with no restrictions</li>
+                <li>Email support</li>
+            </ul>
+        </div>
+
+        <a href="/app" class="btn-primary btn-large" style="display: inline-block; margin-bottom: 1rem;">
+            Start Using Pro Features
+        </a>
+
+        <p style="color: #94a3b8; font-size: 0.875rem;">
+            Your subscription will renew monthly at $9. Cancel anytime from your account.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p>&copy; 2024 Media Toolkit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

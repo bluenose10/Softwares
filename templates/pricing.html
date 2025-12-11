@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade to Pro - Media Toolkit</title>
+    <link rel="stylesheet" href="/static/css/landing.css">
+    <style>
+        .pricing-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0 3rem;
+            text-align: center;
+        }
+
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured {
+            border-color: #6366f1;
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #6366f1;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price span {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #64748b;
+        }
+
+        .plan-description {
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features li {
+            padding: 0.75rem 0;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .plan-features li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .plan-features li.disabled {
+            color: #cbd5e1;
+        }
+
+        .plan-features li.disabled::before {
+            content: "✗";
+            color: #cbd5e1;
+        }
+
+        .upgrade-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upgrade-btn:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+        }
+
+        .upgrade-btn.secondary {
+            background: transparent;
+            border: 2px solid #e2e8f0;
+            color: #64748b;
+        }
+
+        .upgrade-btn.secondary:hover {
+            border-color: #cbd5e1;
+            background: #f8fafc;
+        }
+
+        .comparison-table {
+            margin-top: 4rem;
+        }
+
+        .comparison-table h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        th, td {
+            padding: 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        td {
+            color: #475569;
+        }
+
+        .check-mark {
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .cross-mark {
+            color: #ef4444;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">🎬</span>
+                <span class="logo-text">Media Toolkit</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/app">Launch App</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="pricing-hero">
+        <div class="container">
+            <h1>Upgrade to Pro</h1>
+            <p style="font-size: 1.25rem; margin-top: 1rem; opacity: 0.95;">Unlock unlimited conversions, 500MB files, and premium features for just $9/month</p>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-container">
+        <div class="pricing-grid">
+            <!-- Free Plan -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Free</h3>
+                <div class="plan-price">$0<span>/forever</span></div>
+                <p class="plan-description">Perfect for occasional use</p>
+
+                <ul class="plan-features">
+                    <li><strong>5 conversions per day</strong></li>
+                    <li>Resets every 24 hours</li>
+                    <li>25MB max file size</li>
+                    <li>All 6 tools included</li>
+                    <li>Standard processing queue</li>
+                    <li class="disabled">Priority support</li>
+                    <li class="disabled">Batch processing</li>
+                </ul>
+
+                <button class="upgrade-btn secondary" onclick="window.location.href='/app'">
+                    Continue with Free
+                </button>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="pricing-card featured">
+                <div class="featured-badge">Most Popular</div>
+                <h3 class="plan-name">Pro</h3>
+                <div class="plan-price">$9<span>/month</span></div>
+                <p class="plan-description">For power users and professionals</p>
+
+                <ul class="plan-features">
+                    <li><strong>Unlimited conversions</strong></li>
+                    <li><strong>20x larger files (500MB)</strong></li>
+                    <li>No waiting or limits</li>
+                    <li>All 6 tools included</li>
+                    <li><strong>Priority processing</strong></li>
+                    <li>Email support</li>
+                    <li>Batch processing</li>
+                </ul>
+
+                <button class="upgrade-btn" onclick="upgradeToPro()">
+                    Upgrade to Pro
+                </button>
+                <p style="text-align: center; color: #94a3b8; font-size: 0.875rem; margin-top: 1rem;">
+                    Cancel anytime. No questions asked.
+                </p>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="comparison-table">
+            <h2>Feature Comparison</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th style="text-align: center;">Free</th>
+                        <th style="text-align: center;">Pro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Daily Conversions</td>
+                        <td style="text-align: center;">5</td>
+                        <td style="text-align: center;"><strong>Unlimited</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Max File Size</td>
+                        <td style="text-align: center;">25MB</td>
+                        <td style="text-align: center;"><strong>500MB</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Image Converter</td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>PDF Tools</td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Audio Extractor</td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Video Splitter</td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Video Compressor</td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>AI Image Editor</td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Priority Processing</td>
+                        <td style="text-align: center;"><span class="cross-mark">✗</span></td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Batch Processing</td>
+                        <td style="text-align: center;"><span class="cross-mark">✗</span></td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>API Access</td>
+                        <td style="text-align: center;"><span class="cross-mark">✗</span></td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Email Support</td>
+                        <td style="text-align: center;"><span class="cross-mark">✗</span></td>
+                        <td style="text-align: center;"><span class="check-mark">✓</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p>&copy; 2024 Media Toolkit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        async function upgradeToPro() {
+            const button = event.target;
+            button.disabled = true;
+            button.textContent = 'Redirecting to checkout...';
+
+            try {
+                const response = await fetch('/api/payment/create-checkout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const data = await response.json();
+
+                if (data.checkout_url) {
+                    // Redirect to Stripe Checkout
+                    window.location.href = data.checkout_url;
+                } else {
+                    throw new Error('Failed to create checkout session');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error creating checkout session. Please try again.');
+                button.disabled = false;
+                button.textContent = 'Upgrade to Pro';
+            }
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer style="margin-top: 4rem; padding: 3rem 0; background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%); border-top: 1px solid rgba(99, 102, 241, 0.1);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                <a href="/" style="color: #6366f1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">Home</a>
+                <a href="/app" style="color: #6366f1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">Tools</a>
+                <a href="/terms" style="color: #6366f1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">Terms of Service</a>
+                <a href="/privacy" style="color: #6366f1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">Privacy Policy</a>
+                <a href="https://www.linkedin.com/in/mark-moran-blockchain-solutions-architect/" target="_blank" rel="noopener" style="color: #6366f1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;">LinkedIn</a>
+            </div>
+            <p style="color: #64748b; font-size: 0.875rem; margin: 0;">&copy; 2024 Media Toolkit. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
