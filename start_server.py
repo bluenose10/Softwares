@@ -6,6 +6,12 @@ import subprocess
 
 def main():
     """Start uvicorn with proper PORT handling."""
+    # Debug: Print all environment variables related to PORT
+    print("=== ENVIRONMENT DEBUG ===")
+    print(f"All env vars: {list(os.environ.keys())}")
+    print(f"PORT env var: {os.environ.get('PORT', 'NOT SET')}")
+    print("========================")
+
     # Get PORT from environment, default to 8000
     port = os.environ.get('PORT', '8000')
 
