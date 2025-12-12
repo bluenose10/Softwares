@@ -269,11 +269,16 @@ async function uploadFile(endpoint, formData, onProgress = null) {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('[DEBUG] Page loaded, setting up card click handlers...');
+
     // Card click handlers - navigate to feature panels
     const cards = document.querySelectorAll('.card');
+    console.log(`[DEBUG] Found ${cards.length} cards`);
+
     cards.forEach(card => {
         card.addEventListener('click', () => {
             const panelId = card.getAttribute('data-panel');
+            console.log(`[DEBUG] Card clicked! Panel ID: ${panelId}`);
             if (panelId) {
                 showPanel(panelId);
             }
