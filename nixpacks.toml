@@ -6,4 +6,4 @@ nixPkgs = ["ffmpeg"]
 cmds = ["pip install --upgrade pip", "pip install -r requirements.txt"]
 
 [start]
-cmd = "bash start.sh"
+cmd = "python start_server.py"
