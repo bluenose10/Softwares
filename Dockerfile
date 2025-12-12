@@ -27,14 +27,13 @@ RUN mkdir -p uploads outputs
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
 ENV HOST=0.0.0.0
-ENV PORT=8000
 
-# Expose port
-EXPOSE 8000
+# Expose port (Render will set PORT dynamically)
+EXPOSE 10000
 
-# Health check
+# Health check (using dynamic port)
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:8000/health')" || exit 1
+    CMD python -c "import os; import requests; port = os.getenv('PORT', '8000'); requests.get(f'http://localhost:{port}/health')" || exit 1
 
-# Run the application
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the application (use PORT from environment, default to 8000)
+CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
