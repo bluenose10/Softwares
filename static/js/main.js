@@ -366,7 +366,6 @@ function displayUsageBanner(stats) {
     banner.innerHTML = message;
     banner.style.display = 'block';
 }
-});
 
 // ============================================
 // Global Exports (for module usage)
