@@ -84,6 +84,12 @@ async def privacy_page(request: Request):
     return templates.TemplateResponse("privacy.html", {"request": request})
 
 
+@app.get("/success")
+async def success_page(request: Request):
+    """Serve the payment success page."""
+    return templates.TemplateResponse("success.html", {"request": request})
+
+
 @app.get("/api/usage/stats")
 async def get_usage_stats(request: Request):
     """Get usage statistics for current user."""
