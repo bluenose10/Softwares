@@ -446,12 +446,14 @@ async function compressVideo(mode) {
 
         // Re-enable compress button
         const compressBtn = document.getElementById(`compress-${mode}-btn`);
-        compressBtn.disabled = false;
+        if (compressBtn) {
+            compressBtn.disabled = false;
 
-        if (mode === 'target-size') {
-            compressBtn.textContent = `Compress to ${compressState.targetSizeMb} MB`;
-        } else {
-            compressBtn.textContent = 'Compress Video';
+            if (mode === 'target-size') {
+                compressBtn.textContent = `Compress to ${compressState.targetSizeMb} MB`;
+            } else {
+                compressBtn.textContent = 'Compress Video';
+            }
         }
     }
 }
